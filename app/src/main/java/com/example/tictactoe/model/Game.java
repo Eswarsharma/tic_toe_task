@@ -4,7 +4,13 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
+import javax.inject.Inject;
+
 import static com.example.tictactoe.StringHelper.isNullOrEmpty;
+
+/**
+ * This class is used to create and manager all the activities related to the Game
+ */
 
 public class Game {
 
@@ -18,11 +24,14 @@ public class Game {
 
     public MutableLiveData<Player> winner = new MutableLiveData<>();
 
-    public Game(String player_1, String player_2)
+    // constructor
+    @Inject
+    public Game(String playerOne, String playerTwo)
     {
+        Log.d(TAG, "Game: " + playerOne  +  " " + playerTwo) ;
         cells = new Cell[3][3];
-        player1 = new Player(player_1, "X"); // assign X for player 1
-        player2 = new Player(player_2,"O"); // assign O for player 2
+        player1 = new Player(playerOne, "X"); // assign X for player 1
+        player2 = new Player(playerTwo,"O"); // assign O for player 2
         currentPlayer = player1; // player 1 will be current by default
     }
 
@@ -119,6 +128,10 @@ public class Game {
         currentPlayer = currentPlayer == player1 ? player2 : player1;
     }
 
+    /**
+     * Method to clear the cells to start new game
+     * Below method will be called after clicking on the Done button shown in Winner dialog
+     */
     public void clearBoard()
     {
         player1 = null;

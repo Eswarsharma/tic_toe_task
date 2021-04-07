@@ -6,6 +6,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.tictactoe.di.AppComponent;
+import com.example.tictactoe.di.DaggerAppComponent;
+import com.example.tictactoe.di.DaggerModule;
 import com.example.tictactoe.model.Cell;
 import com.example.tictactoe.model.Game;
 import com.example.tictactoe.model.Player;
@@ -13,19 +16,26 @@ import com.example.tictactoe.model.Player;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.inject.Inject;
+
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
 
 import static com.example.tictactoe.StringHelper.stringFromNumbers;
 
+/**
+ * ViewModel that binds to the activity_main_screen.xml file
+ */
+
 public class MyViewModel extends ViewModel {
 
     public ObservableArrayMap<String, String> cells;
     private Game game;
 
-    public void start_game(String player1, String player2) {
-        game = new Game(player1, player2);
+    // method to initialize the game with given players
+    public void startGame(String playerOne, String playerTwo) {
+        game = new Game(playerOne, playerTwo);
         cells = new ObservableArrayMap<>();
     }
 
@@ -43,6 +53,7 @@ public class MyViewModel extends ViewModel {
         }
     }
 
+    // method to return the winner
     public LiveData<Player> getWinner() {
         return game.winner;
     }

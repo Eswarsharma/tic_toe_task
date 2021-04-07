@@ -44,4 +44,8 @@ dependencies {
     // adding libraries
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "io.reactivex.rxjava3:rxjava:3.0.11"
+
+    // dagger library
+    implementation 'com.google.dagger:dagger:2.33'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.33'
 }

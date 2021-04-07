@@ -2,15 +2,15 @@
 
     <item>
         <shape android:shape="rectangle">
-            <padding android:top="2dp" />
-            <solid android:color="@color/cell_color" />
+            <padding android:top="@dimen/padding_all_drawables" />
+            <solid android:color="@color/cellColor" />
         </shape>
     </item>
 
     <item>
         <shape android:shape="rectangle">
-            <padding android:right="2dp" />
-            <solid android:color="@color/cell_color" />
+            <padding android:right="@dimen/padding_all_drawables" />
+            <solid android:color="@color/cellColor" />
         </shape>
     </item>
 

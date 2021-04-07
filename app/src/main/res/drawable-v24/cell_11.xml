@@ -3,29 +3,29 @@
 
     <item>
         <shape android:shape="rectangle">
-            <padding android:bottom="2dp" />
-            <solid android:color="@color/cell_color" />
+            <padding android:bottom="@dimen/padding_all_drawables" />
+            <solid android:color="@color/cellColor" />
         </shape>
     </item>
 
     <item>
         <shape android:shape="rectangle">
-            <padding android:top="2dp" />
-            <solid android:color="@color/cell_color" />
+            <padding android:top="@dimen/padding_all_drawables" />
+            <solid android:color="@color/cellColor" />
         </shape>
     </item>
 
     <item>
         <shape android:shape="rectangle">
-            <padding android:left="2dp" />
-            <solid android:color="@color/cell_color" />
+            <padding android:left="@dimen/padding_all_drawables" />
+            <solid android:color="@color/cellColor" />
         </shape>
     </item>
 
     <item>
         <shape android:shape="rectangle">
-            <padding android:right="2dp" />
-            <solid android:color="@color/cell_color" />
+            <padding android:right="@dimen/padding_all_drawables" />
+            <solid android:color="@color/cellColor" />
         </shape>
     </item>
 
